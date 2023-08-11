@@ -1,4 +1,5 @@
 const listaNomes = ['Jodebergues', 'Moshé', 'Joquebede', 'Malaquias', 'Deres', 'Joio', 'Daniel'];
+const form = document.querySelector('form');
 const input = document.getElementById('inp');
 const ul = document.getElementById('lista');
 const info = document.getElementById('info');
@@ -27,6 +28,8 @@ const mostraNomes = (name) => {
         }
     }
 }
+
+form.addEventListener('submit', e => e.preventDefault());
 
 input.addEventListener('keyup', () => {
     let nomeDigitado = input.value;
