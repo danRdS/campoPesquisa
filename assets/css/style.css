@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+}
+
+html{
+    background-color: #181818;
+    color: #e7e7e7;
+}
+
+h2{
+    cursor: default;
+}
+.container{
+    background-color: rgb(13, 13, 101);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .8rem;
+    border-radius: 6px;
+    min-width: 30vw;
+    min-height: 40vh;
+    word-break: break-all;
+}
+
+form{
+    padding: .4rem;
+    display: inline-block;
+    position: relative;
+}
+
+input{
+    all: unset;
+    border-bottom: 1px solid grey;
+    padding: .8rem 2rem .4rem .5rem;
+    caret-color: aqua;
+    transition: all .3s ease-in-out;
+}
+
+input:focus{
+    border-color: aqua;
+}
+
+.pesquisa{
+    position: absolute;
+    top: 40%;
+    left: .8rem;
+    pointer-events: none;
+    transition: all .4s ease-in-out;
+}
+
+input:is(:focus, :not(:placeholder-shown)) + .pesquisa{
+    color: aqua;
+    top: 0;
+    scale: .8;
+}
+
+button{
+    all: unset;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    right: .5rem;
+    display: none;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+input:not(:placeholder-shown) ~ button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover{
+    background-color: rgb(86, 7, 86);
+}
+
+h2, ul, #info{
+    padding: .5rem;
+}
