@@ -16,17 +16,20 @@ function mostrar(){
 
 const mostraNomes = (name) => {
     let li = document.querySelectorAll('li');
-    let semResultado = 0;
+    let hasResult = false;
     for(let nome of li){
         if(nome.innerText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))){
             nome.style.display = 'block';
             info.style.display = 'none';
+            hasResult = true;
         } else {
             nome.style.display = 'none';
-            semResultado++;
-            semResultado == li.length ? (info.style.display = 'block', info.innerHTML = `Nenhum resultado para "${name}"`) : info.style.display = 'none';
         }
     }
+
+    if(!hasResult){
+        info.style.display = 'block', info.innerHTML = `Nenhum resultado para "${name}"`;
+    } 
 }
 
 form.addEventListener('submit', e => e.preventDefault());
